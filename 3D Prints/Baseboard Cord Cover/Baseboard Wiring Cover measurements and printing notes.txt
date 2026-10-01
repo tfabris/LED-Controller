@@ -1,0 +1,12 @@
+Baseboard cord cover measurements and printing instructions
+
+If printing in white resin, increase exposure time from 2sec to 4sec.
+
+Measurements I made when building this file:
+- Thickness of the AC power cord: 8.5mm
+- 3d print wall thickness for resin printer: 2mm
+- Channel Width Inner diameter: (to hold up to two AC cords): minimum 14.6mm
+- Carpet to first ledge top 122mm high. Note: first ledge is the inflection crease, outer ledge edge is rounded 
+- Tiny outer ledge edge curve from front wall to inflection crease: 1.2mm high, 1.2mm deep
+- S-curve: First ledge Inflection crease to top shelf: 16mm high, 7mm deep
+- Top shelf: 3.8mm deep

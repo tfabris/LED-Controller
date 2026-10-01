@@ -1,0 +1,112 @@
+Master Bedroom custom lit shelves - measurements and sourcing
+ 
+Desired width and depth of shelves:
+- West wall: 16” deep 3’ (36") long, 2 stud brackets each
+- North wall: 12” deep, 6’ (72") long, 3 stud brackets each
+
+Shelf contents and other limitations:
+- Largest book: 15” tall 10.5” deep
+- TOS model: 16”w 16” tall 34” long, 20 pounds weight
+- My electric box outlet, top edge, including plastic cover: 17"
+- Approx 6’ height top shelf (top shelf approx 72”, can be a little higher).
+
+Number of shelves = 4 shelves on each wall, height calculations
+- 72” / 4 shelves = 18” gap between shelves, plus 2" thickness allowance for each shelf: 1" for shelf itself, 1" for lighting bracket, plus some slop.
+- Bottom shelf top edge: 20"  (17" for outlet, 1" wood thickness, plus starting everyone 2” higher, so that everyone misses the stud nails I found)
+- Second shelf top edge: 40" (20"+18"gap+2" thickness allowance) 
+- Third shelf top edge:  60" (40"+18"gap+2" thickness allowance)
+- Fourth shelf top edge: 80" (60"+18"gap+2" thickness allowance)
+
+Studs
+- 16 inch centers
+- Scan with scanning tool and then locate individual stud nails with magnets.
+
+Cable management
+- 3D print the baseboard vertical wiring channel covers.
+- 3D print the control box enclosure.
+- Black cable channels 2 x 39 inches each (qty:3): https://www.amazon.com/D-Line-Raceway-1D3015B-Surface-Electrical/dp/B09CKV1YGH
+
+Voltage
+- MEAN WELL LRS-200-5 - Primary output voltage (vdc): 5 - Output current (a): 40 Maximum output power (w): 200 
+- Make sure you understand the Live versus Neutral versus Ground pins for the main AC into the power supply https://www.meanwell.com/Upload/PDF/Enclosed_Type_EN.pdf
+- Find out which fuses to use in your fuse holders:  https://quinled.info/2019/02/18/use-fuses-for-increased-safety/
+
+Strip lengths
+- Figure out how many LEDs per strip you'll be using based on your shelf lengths.
+  - You'll need to know the exact numbers of LEDs per row, for the programming side of the project.
+- Total strip is 300 LEDs in 5000mm
+- That’s  60 LEDs per meter, or 1 led every 16.6666mm
+- 1 foot is 304.8mm
+- So about 18.3 LEDs per foot
+- 16.4ft strips x2:
+  - First strip: Get two longs and a short from it: 16.4ft - 6ft - 6ft - 3 = 1.4 feet left over.
+  - Second strip: Get one long and the remaining two short strips out of it: 16.4ft - 6ft - 3ft - 3ft = 4.4ft left over.
+- Final tally: at 60 LEDs per meter, minus about one LED per each end...
+  - Shelf 1 = 67⅛in or 1.70688m = 102.4 (actual: 100 LEDs)
+  - Shelf 2/3 = 71⅝in or 1.81864m = 109.1184 (actual: 106 and 107 LEDs, respectively)
+  - Shelf 4/5/6 = 35⅞in or 0.90932m = 54.5592 (actual: 52 each)
+  - 100 + 106 + 107 + 52 + 52 + 52 = 469 LEDs total
+  - Array positions (0-indexed):
+    - Shelf 1 = [0] to [99]
+    - Shelf 2 = [100] to [205]
+    - Shelf 3 = [206] to [312]
+    - Shelf 4 = [313] to [364]
+    - Shelf 5 = [365] to [416]
+    - Shelf 6 = [417] to [468]
+
+Arduino programming:
+- https://www.youtube.com/watch?v=UhYu0k2woRM
+- Ardunio hack for RGBW on SK6812 lights: https://www.partsnotincluded.com/fastled-rgbw-neopixels-sk6812/
+- The demo examples that come with the FastLED library: https://github.com/FastLED/FastLED/tree/master/examples
+
+Sourcing Shelves:
+- North Wall shelves: Rubbermaid melamine shelf 71.8" x 11.8" 0.63 in thick (qty 4) - Home Depot Aisle BW, Bay 009 -  https://www.homedepot.com/p/Rubbermaid-Black-Laminated-Wood-Shelf-12-in-D-x-72-in-L-FG4B8200BLA/202260835
+- West Wall shelves 16x36 3/4" Thick: Melamine shelf 16x36 (qty 4), customize color at checkout https://us.amazon.com/White-Laminate-Shelf-Melamine-Accurate/dp/B07H43G8QP?th=1
+- StyleWell wooden shelf brackets 11.5" x 7.5": lowes Aisle BW, Bay 009 - (qty 20)  https://www.homedepot.com/p/StyleWell-11-5-in-x-7-5-in-Black-Wooden-Decorative-Shelf-Bracket-27794PKLHD/312264280
+  - Brackets come with screws already
+
+LED 45 degree aluminum channel rails:
+- Black, 78.74 inches (2m) (qty: 5) cut to length: https://www.environmentallights.com/19358-cs110-2m-b.html
+- End caps (qty: 12): https://www.environmentallights.com/19364-el-cap-155-b.html
+- Order number 100335774 - https://www.environmentallights.com/sales/order/view/order_id/483416
+
+Aluminum channel cutlist:
+- (3x) 3ft minus 1/8in (aka) 2ft,11⅞in (aka) 35⅞in
+- (2x) 5ft 11.75in minus 1/8in (aka) 5ft,11⅝in (aka) 71⅝in
+- (1x) 5ft 11.75in minus 1/8in minus 4.5in (aka) 5ft,7⅛in (aka) 67⅛in
+
+
+
+Sourcing LED systems:
+
+Amazon:
+- BTF Lighting strips (qty: 2): https://www.amazon.com/BTF-LIGHTING-Individually-Addressable-Flexible-Non-Waterproof/dp/B079ZW1265
+  - Control signal: 3-conductor SK6812 RGBW ICs (Using ws2812b protocol)
+- Mean well power supply: https://www.amazon.com/MEAN-WELL-LRS-200-5-Single-Switchable/dp/B0131V99BA
+- Signal splitter (ENDED UP NOT USING): https://www.amazon.com/BTF-LIGHTING-Amplifier-Repeater-Addressable-Programmable/dp/B07RDKRW5T/
+  - In particular look at this diagram for two sets of splitters daisy chained controlling up to eight strips: https://m.media-amazon.com/images/I/71wkuC2mPyL._AC_SL1200_.jpg
+- Arduino (Prototype): https://www.amazon.com/gp/product/B01H4ZLZLQ
+- Arduino (Final): Songhe MEGA 2560 PRO Embed CH340G/ATMEGA2560-16AU Pro Mega Module with Male Pinheader: https://www.amazon.com/dp/B07TGF9VMQ
+- AC right angle flat extension cord for power supply (3 6-foot sections, some for other uses): https://www.amazon.com/Maximm-Cable-Rotating-Extension-Grounded/dp/B075KQZZKK
+- Black cable channels 2 x 39 inches each (qty:3): https://www.amazon.com/D-Line-Raceway-1D3015B-Surface-Electrical/dp/B09CKV1YGH
+- Extension wire and connectors (2): https://www.amazon.com/Extension-Connectors-Transparent-Solderless-Waterproof/dp/B0BG3Y9Y8P 
+  - Note: The connectors included with this extension wire do not fit inside the 45-degree rails. Better connectors listed below.
+- Fuse holder (qty: 2): https://www.amazon.com/Blue-Sea-Systems-5035-Independent/dp/B006VELERM
+- Wire stripping tool for LED strips (I don't actually like this one, need to shop for a better one): https://www.amazon.com/Stripper-Electrical-Klein-Tools-11063W/dp/B00BC39YFQ
+- Smaller connector sets (qty:3 but got 5 just in case) because the first ones didn't fit the channels: SEZO WS2811 WS2812B SK6812 WS2814 Light Strip Connectors Kit 3PIN: https://www.amazon.com/gp/product/B0B3DG5L55
+
+Digikey:
+- Mean Well terminal block cover: https://www.digikey.com/en/products/detail/mean-well-usa-inc/TBC-09/7707110
+- Breadboard to prototype the lights: https://www.digikey.com/en/products/detail/3m/922306/180285
+- Shield for Arduino Mega (Prototype Buttons), Arduino part number A000080: https://www.digikey.com/en/products/detail/arduino/A000080/3476360
+- Perfboard for Arduino Mega Small (Final Buttons): https://www.amazon.com/dp/B081QYPHHP
+- Resistors for data line 330 ohm (1 used, several extra): https://www.digikey.com/en/products/detail/stackpole-electronics-inc/CF14JT330R/1741399
+- (NOT USED): Switches with long black actuators: (6): https://www.digikey.com/en/products/detail/e-switch/TL1105YF160Q/514438
+- (FINAL, USED): 90 degree switches with long black actuators: (8): https://www.digikey.com/en/products/detail/cit-relay-and-switch/CT1102V13-35F100/16607670
+
+Avoutlet.com
+- Mean well power supply mounting brackets and screws: https://www.avoutlet.com/power-products/terminal-blocks/mean-well-mhs012-panel-mount-feet/
+
+
+
+

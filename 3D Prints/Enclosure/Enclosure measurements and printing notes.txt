@@ -1,0 +1,54 @@
+Exporting the enclosure for printing:
+- In Blender's "Scene" panel (bottom right, 5th icon from top) make sure unit scale is 1000.0 
+- Hide all "Cutter" parts, they are grouped under the "Cutters" section.
+- Select all visible parts of each section in turn and export them separately: MainSection, and Lid.
+- Do this by selecting this way:
+  - Click once on the middle of the object you wish to export (either the MainSection or the Lid).
+    - This click will register the name of the object, so that when you export, that will be part of the file name.
+  - Right-Click on that object's section in the hierarchy tree (such as MainSection or Lid) and press "Select Objects".
+- In the object list, make sure all MainSection (or Lid) parts are selected, and the Cutter parts are NOT visible or selected.
+- Use the features of the "Mesh: 3D Print Toolbox" add-on to export the selected part group as a single STL file (install the add-on first if needed).
+- Make sure you have clicked on the selections as instructed above, or else the exporting tool will try to give the two objects the same file name.
+- When exporting, make sure the "Apply Scale" checkbox is checked.
+
+Tip: Only export it as two separate files if you are doing this for your own printer. If exporting for a third party service like Shapeways, just export everything as a single file so that you aren't charged for two separate things at Shapeways.
+
+After Printing:
+- Drill the screw holes out a tiny bit with your 7/64" drill bit.
+
+
+Measurements:
+- Overall height of outside dimension including lid should match the height of the lighting rail, for aesthetic reasons.
+  - Lighting rail height: 18.5 mm
+- Overall length of outside dimension, box only without the mounting tab :112.3 mm
+- Overall box position relative to scrxew mounts: east end of box needs to come westward about 1mm
+- Western mounting tab - try extending so its center hole is 270mm from west wall, to allow screwing it in past the wires. 
+- Overall height of inner electronics, including pointy bits underneath: about 13.5mm - too hard to measure accurately at the moment.
+- Inner object heights: 
+  - 10.2mm from bottom of bread/shield board to tops of buttons
+  - Thickness of bread/shield board: 1.54mm
+  - Button heights (top of breadboard to top of button casings): about 8.66mm
+  - 3.3mm clearance for pointy stuff on bottom.
+- Thickness of floor and ceiling can be as thick as: 18.5-13.5 = 5mm / 2 = 2.5mm
+- Cord hole, distance from INNER side of East wall: 54mm (happens to be the length of the mega small board).
+- Cord hole, width 7mm
+- South edge of board, distance to south edge of micro USB (not counting extra space for cord sheath) about 18mm
+- Width of micro USB (not counting extra space for cord sheath) 7.5mm
+- Width of breadboard/shield (south to north) 44.5mm
+- Length of breadboard (east to west, not including slight Arduino protrusion): 96.6mm - WRONG - I NEEDED TO MODIFY THIS BY AT LEAST 1MM OR MORE.
+- Length of assembly (including slight Arduino board protrusion): 97.05mm - WRONG - I NEEDED TO MODIFY THIS BY AT LEAST 1MM OR MORE.
+- Button spacing:
+   - Button centers, distance from inner ceiling - 3.1mm
+   - Button tips protrude from south edge of breadboard/shield - 8.7mm
+   - Button hole diameter: 3.3mm
+   - 2.54mm breadboard spacing per hole.
+     - Grouped buttons are four holes apart or 10.16mm apart on center
+     - Ungrouped buttons on the outer ends are are 6 holes apart, or 15.24mm from the prior button on center.
+     - Ungrouped button gap in the middle between 3-to-2 group is 5 holes apart, or 12.7mm apart on center.
+   - East to west, button groups pattern is: 1, largegap, 3, smallgap 2, gap, 2, largegap, 2
+   - From easternmost button:
+     - (1)       0
+     - (2,3,4)   15.24mm, 25.4mm, 35.56mm
+     - (5,6)     48.26mm, 58.42mm
+     - (7,8)     73.66mm, 83.82mm
+- On/Off button, center, distance from east inner wall - 7.55mm
