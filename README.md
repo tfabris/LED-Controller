@@ -23,12 +23,12 @@ Project Links
 -------------
 
 [README.md](            README.md)                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← *You Are Here*  
-`    ├──`[3D Prints](   3D%20Prints)              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blender files for control box and baseboard covers  
-`    ├──`[Reference](   Reference)                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Information I used to make the shelves and lights  
-`    └──`[Schematics](  Schematics)                                       &nbsp;&nbsp;Simplified wiring drawings  
-[LED_Controller.ino](   LED_Controller.ino) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main controller functions  
+`    ├──`[3D Prints](   3D%20Prints)              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blender files  
+`    ├──`[Reference](   Reference)                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Info, measurements  
+`    └──`[Schematics](  Schematics)                                       &nbsp;&nbsp;Wiring drawings  
+[LED_Controller.ino](   LED_Controller.ino) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main functions  
 [Patterns.h](           Patterns.h)         &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;Color patterns  
-[FastLED_RGBW_2.h](     FastLED_RGBW_2.h)                     &nbsp;&nbsp;&nbsp;&nbsp;Workaround for RGBW  
+[FastLED_RGBW_2.h](     FastLED_RGBW_2.h)                     &nbsp;&nbsp;&nbsp;&nbsp;RGBW Workaround  
 
 
 Software Notes
